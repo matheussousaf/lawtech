@@ -1,2 +1,0 @@
-# lawtech
-Lawtech Project.
