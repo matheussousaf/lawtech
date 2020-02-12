@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CRUD Flask | Listar</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="{{ url_for('index') }}">Home</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <h1>Página de Listar</h1>
+  <p>Enjoy!</p>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Telefone</th>
+      <th scope="col">CPF</th>
+      <th scope="col">Email</th>
+      <th scope="col">Excluir/Atualizar</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for pessoa in pessoas %}
+    <tr>
+      <th scope="row">{{ pessoa._id }}</th>
+      <td>{{ pessoa.nome }}</td>
+      <td>{{ pessoa.telefone }}</td>
+      <td>{{ pessoa.cpf }}</td>
+      <td>{{ pessoa.email }}</td>
+      <td><a href="/deletar/{{ pessoa._id }}">X</a> | <a href="/atualizar/{{ pessoa._id }}">Atualizar</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+</body>
+</html>

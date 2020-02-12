@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CRUD Flask | Cadastrar</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="{{ url_for('index') }}">Home</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <h1>Página de Cadastro</h1>
+  <p>Enjoy!</p>
+</div>
+
+<form method="POST" action="{{ url_for('cadastro') }}">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="nome">Nome</label>
+      <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome" required>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="cpf">CPF</label>
+      <input type="number" class="form-control" name="cpf" id="cpf" placeholder="CPF" required maxlength="11">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="adress">Email</label>
+      <input type="adress" class="form-control" name="adress" id="adress" placeholder="Endereco" required>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="birth_date">Email</label>
+      <input type="birth_date" class="form-control" name="birth_date" id="birth_date" placeholder="Data Nascimento" required>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Cadastrar</button>
+  <button type="reset" class="btn btn-light">Limpar Campos</button>
+</form>
+
+</body>
+</html>
